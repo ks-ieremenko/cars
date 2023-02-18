@@ -1,0 +1,30 @@
+.container {
+    text-align: center;
+}
+
+
+.title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+}
+
+.pieChartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    column-gap: 95px;
+}
+
+.pieChart {
+    width: 28%;
+    text-align: center;
+}
+
+.pieChart p {
+    font-weight: 600;
+    font-size: 16px;
+    max-width: 250px;
+    margin: 15px auto;
+}

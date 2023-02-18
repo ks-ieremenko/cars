@@ -1,0 +1,46 @@
+.container {
+    padding: 35px 56px 35px 38px;
+    text-align: right;
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end;
+    background: white;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(112, 149, 131, 0.3);
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 64px;
+}
+
+.blackNav {
+    background: #181B19;
+    display: flex;
+    padding: 14px 63px;
+    column-gap: 32px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.blackNav > div {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+
+.blackNav, .blackNav a {
+    color: white;
+}
+
+.personal {
+    margin-left: auto;
+}
+
+.blackNav svg {
+    color: #709583;
+}

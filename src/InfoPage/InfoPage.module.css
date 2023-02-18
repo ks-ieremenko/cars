@@ -1,0 +1,24 @@
+.carContainer {
+    display: flex;
+    line-height: 140%;
+    column-gap: 30px;
+    font-size: 20px;
+}
+
+
+.container {
+    padding: 56px 90px 110px 90px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container ol, .container ul {
+    padding-left: 30px;
+}
+
+.link {
+    color: #181B19;
+}

@@ -1,0 +1,10 @@
+.pieChart {
+    position: relative;
+    margin-top: 40px;
+}
+
+.percent {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+}

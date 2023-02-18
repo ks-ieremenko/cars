@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.container svg {
+    min-width: 33px;
+}

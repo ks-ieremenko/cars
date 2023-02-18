@@ -1,0 +1,11 @@
+.fullContainer {
+    position: relative;
+}
+
+.container {
+    padding: 56px 247px 153px 247px;
+}
+
+.container p {
+    color: #181B19;;
+}

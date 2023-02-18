@@ -1,0 +1,48 @@
+.image {
+    width: 100%;
+    position: relative;
+
+}
+
+.recImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+}
+
+.container {
+    position: relative;
+}
+
+.imageText {
+    position: absolute;
+    top: 40%;
+    right: 30px;
+}
+
+
+.imageText h2 {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 53px;
+    text-align: right;
+}
+
+.imageText h2:first-child {
+    color: #709583;
+}
+
+.imageText h2:nth-child(2) {
+    color: #FFFFFF;
+}
+
+.imageText p {
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: right;
+
+    color: #FFFFFF;
+}

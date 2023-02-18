@@ -1,0 +1,56 @@
+.car {
+    width: 450px;
+}
+
+.image {
+    width: 450px;
+}
+
+.car h2 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 140%;
+    color: #181B19;
+    margin-bottom: 12px;
+}
+
+.iconsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+}
+
+.iconsContainer > div {
+    flex-basis: 33.333333%
+}
+
+.priceContainer {
+    display: flex;
+    font-weight: 700;
+    column-gap: 50px;
+    font-size: 24px;
+    line-height: 140%;
+    color: #181B19;
+    padding: 33px 0 47px 20px;
+}
+
+.priceContainer > p:last-child {
+    font-size: 16px;
+}
+
+.button {
+    width: 100%;
+    background: #709583;
+    border-radius: 10px;
+    padding: 13px 0;
+    outline: 0;
+    border: 0;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: rgba(112, 149, 131, 0.75);
+}
