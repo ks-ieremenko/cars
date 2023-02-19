@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Car } from './Car/Car'
 import { BookingModal } from './BookingModal/BookingModal'
 import styles from './CarListPage.module.css'
+import { URL } from '../globalConstants'
 
 export const CarListPage = () => {
     const [cars, setCars] = useState([])
@@ -17,7 +18,17 @@ export const CarListPage = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8080/cars', {
+        fetch(`${URL}/cars`, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((res) => res.json())
+            .then((response) => {
+                setCars(response)
+            })
+
+        fetch(`${URL}/user`, {
             headers: {
                 'Content-Type': 'application/json',
             },

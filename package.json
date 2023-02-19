@@ -10,6 +10,7 @@
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "classnames": "^2.3.2",
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -47,6 +48,5 @@
     "tabWidth": 4,
     "semi": false,
     "singleQuote": true
-  },
-  "proxy": "http://localhost:8080"
+  }
 }

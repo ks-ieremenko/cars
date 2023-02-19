@@ -8,6 +8,7 @@ import { ReactComponent as Nav } from '../media/nav.svg'
 import { ReactComponent as User } from '../media/user.svg'
 
 import styles from './Navbar.module.css'
+import { NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
     return (
@@ -34,7 +35,7 @@ export const Navbar = () => {
 
                 <div className={styles.personal}>
                     <User />
-                    <p>Особистий кабінет</p>
+                    <NavLink to={'/profile'}>Особистий кабінет</NavLink>
                 </div>
             </div>
 
