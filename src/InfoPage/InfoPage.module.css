@@ -22,3 +22,29 @@
 .link {
     color: #181B19;
 }
+
+@media screen and (max-width: 450px) {
+    .container {
+        padding: 28px 20px 110px 20px;
+    }
+
+    .container h1 {
+        margin-bottom: 14px;
+        font-size: 26px;
+    }
+
+    .container img {
+        max-width: 100%;
+    }
+
+    .carContainer {
+        flex-direction: column;
+    }
+
+    .carContainer p, .carContainer ol, .carContainer ul {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+
+}

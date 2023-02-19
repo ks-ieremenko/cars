@@ -9,3 +9,21 @@
 .container p {
     color: #181B19;;
 }
+
+@media screen and (max-width: 850px) {
+    .container {
+        padding: 16px 16px 16px 31px;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .container {
+        padding: 25px;
+    }
+
+    .container p {
+        font-size: 8px;
+    }
+
+}

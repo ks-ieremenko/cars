@@ -20,6 +20,7 @@
 .blackNav {
     background: #181B19;
     display: flex;
+    align-items: center;
     padding: 14px 63px;
     column-gap: 32px;
     font-weight: 400;
@@ -43,4 +44,38 @@
 
 .blackNav svg {
     color: #709583;
+}
+
+@media screen and (max-width: 850px) {
+    .blackNav {
+        font-size: 7px;
+        column-gap: 15px;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .blackNav svg {
+        width: 13px;
+    }
+
+    .container {
+        font-size: 14px;
+        padding: 20px 33px 20px 34px;
+        gap: 15px;
+    }
+
+    .container svg {
+        height: 30px;
+        width: 70px;
+        left: 27px;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .container {
+        font-size: 8px;
+        padding: 16px 16px 16px 31px;
+    }
 }

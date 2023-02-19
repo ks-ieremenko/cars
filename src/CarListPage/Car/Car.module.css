@@ -3,7 +3,7 @@
 }
 
 .image {
-    width: 450px;
+    width: inherit;
 }
 
 .car h2 {
@@ -53,4 +53,70 @@
 
 .button:hover {
     background: rgba(112, 149, 131, 0.75);
+}
+
+@media screen and (max-width: 850px) {
+    .car {
+        width: 300px;
+    }
+
+    .car h2 {
+        font-size: 18px;
+    }
+
+    .iconsContainer {
+        gap: 2px;
+        justify-content: space-between;
+    }
+
+    .iconsContainer > div {
+        flex-basis: 30%;
+    }
+
+    .iconsContainer svg {
+        height: 18px;
+    }
+
+    .priceContainer {
+        column-gap: 10px;
+        font-size: 17px;
+        padding: 14px 0 21px 18px;
+    }
+
+    .priceContainer > p:last-child {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 9px 0;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .car {
+        width: 250px;
+    }
+
+    .iconsContainer {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .iconsContainer svg {
+        height: 16px;
+    }
+
+    .priceContainer {
+        font-size: 16px;
+    }
+
+    .priceContainer > p:last-child {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 12px;
+    }
 }

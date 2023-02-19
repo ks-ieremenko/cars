@@ -8,6 +8,7 @@
     font-size: 48px;
     line-height: 58px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .pieChartContainer {
@@ -15,6 +16,7 @@
     flex-wrap: wrap;
     text-align: center;
     column-gap: 95px;
+    justify-content: space-between;
 }
 
 .pieChart {
@@ -27,4 +29,25 @@
     font-size: 16px;
     max-width: 250px;
     margin: 15px auto;
+}
+
+@media screen and (max-width: 1300px) {
+    .pieChartContainer {
+        column-gap: 48px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+}
+
+
+@media screen and (max-width: 450px) {
+    .pieChartContainer {
+        column-gap: 10px;
+    }
+
+    .title {
+        font-size: 22px;
+        line-height: 22px;
+    }
 }

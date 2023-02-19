@@ -7,3 +7,9 @@
 .container svg {
     min-width: 33px;
 }
+
+@media screen and (max-width: 450px) {
+    .container {
+        gap: 0;
+    }
+}

@@ -9,3 +9,16 @@
 .list {
     padding-left: 20px;
 }
+
+@media screen and (max-width: 450px) {
+    .title {
+        font-size: 30px;
+        line-height: 30px;
+        margin: 10px 0 13px 0;
+    }
+
+    ul {
+        font-size: 8px;
+    }
+
+}

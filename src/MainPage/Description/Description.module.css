@@ -9,3 +9,14 @@
     text-align: center;
     margin: 100px 0 30px 0;
 }
+
+
+@media screen and (max-width: 450px) {
+    .title {
+        font-size: 30px;
+        line-height: 30px;
+        margin: 0 0 13px 0;
+    }
+
+
+}

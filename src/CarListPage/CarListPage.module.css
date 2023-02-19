@@ -14,3 +14,26 @@
     margin-bottom: 70px;
     text-align: center;
 }
+
+@media screen and (max-width: 850px) {
+    .container {
+        font-size: 11px;
+        padding: 16px 16px 16px 31px;
+    }
+
+    .container h1 {
+        margin-bottom: 37px;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .container {
+        padding: 25px;
+    }
+
+    .container h1 {
+        margin-bottom: 20px;
+    }
+
+}
