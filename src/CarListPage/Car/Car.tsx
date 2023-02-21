@@ -8,6 +8,7 @@ import { ReactComponent as PersonIcon } from '../../media/person-icon.svg'
 import { ReactComponent as TransmissionIcon } from '../../media/transmission-icon.svg'
 import { ReactComponent as LitreIcon } from '../../media/litre-icon.svg'
 import { useNavigate } from 'react-router-dom'
+import { URL } from '../../globalConstants'
 
 type CarProps = {
     image: string
@@ -50,12 +51,20 @@ export const Car = (props: CarProps) => {
     const carName = `${brand} ${name} ${year}`
 
     const handleClick = () => {
-        if (!localStorage.getItem('token')) {
-            navigate('/login')
-        } else {
-            onModalOpen()
-            onCarBook({ ...car, name: carName })
-        }
+        fetch(`${URL}/user`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                if (res.error) {
+                    navigate('/login')
+                } else {
+                    onModalOpen()
+                    onCarBook({ ...car, name: carName })
+                }
+            })
     }
 
     return (

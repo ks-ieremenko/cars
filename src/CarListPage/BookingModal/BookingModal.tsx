@@ -15,7 +15,12 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
     const [endDate, setEndDate] = useState()
     const [error, setError] = useState('')
     const [user, setUser] = useState<any>()
+    let time =
+        endDate && startDate
+            ? new Date(endDate).getTime() - new Date(startDate).getTime()
+            : 0
 
+    let days = time / (1000 * 3600 * 24) + 1
     useEffect(() => {
         fetch(`${URL}/user`, {
             headers: {
@@ -82,6 +87,8 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
         }
     }
 
+    const finalPrice = car.price * days + checkedAmount
+
     return (
         <div className={styles.background} onClick={onClose}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -131,19 +138,14 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                     </p>
                 ) : null}
                 {user?.discount ? (
-                    <span className={styles.discountPrice}>
-                        {car.price + checkedAmount}₴
-                    </span>
+                    <span className={styles.discountPrice}>{finalPrice}₴</span>
                 ) : null}
                 <p className={styles.price}>
                     Остаточна ціна
                     <span>
                         {!user?.discount
-                            ? car.price + checkedAmount
-                            : car.price +
-                              checkedAmount -
-                              ((car.price + checkedAmount) / 100) *
-                                  user?.discount}
+                            ? finalPrice
+                            : finalPrice - (finalPrice / 100) * user?.discount}
                         ₴
                     </span>
                 </p>
