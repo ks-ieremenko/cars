@@ -21,6 +21,19 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
             : 0
 
     let days = time / (1000 * 3600 * 24) + 1
+
+    let daysDiscount = 0
+
+    if (days >= 3) {
+        daysDiscount = 5
+    }
+    if (days >= 7) {
+        daysDiscount = 10
+    }
+    if (days >= 28) {
+        daysDiscount = 15
+    }
+
     useEffect(() => {
         fetch(`${URL}/user`, {
             headers: {
@@ -89,6 +102,7 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
 
     const finalPrice = car.price * days + checkedAmount
 
+    const allDiscount = (user?.discount || 0) + daysDiscount
     return (
         <div className={styles.background} onClick={onClose}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -132,20 +146,20 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                     ))}
                 </div>
                 <p className={styles.pledge}>+ застава {car.pledge}₴</p>
-                {user?.discount ? (
+                {allDiscount ? (
                     <p className={styles.discount}>
-                        Вам нарахована знижка у розмірі {user?.discount}%
+                        Вам нарахована знижка у розмірі {allDiscount}%
                     </p>
                 ) : null}
-                {user?.discount ? (
+                {allDiscount ? (
                     <span className={styles.discountPrice}>{finalPrice}₴</span>
                 ) : null}
                 <p className={styles.price}>
                     Остаточна ціна
                     <span>
-                        {!user?.discount
+                        {!allDiscount
                             ? finalPrice
-                            : finalPrice - (finalPrice / 100) * user?.discount}
+                            : finalPrice - (finalPrice / 100) * allDiscount}
                         ₴
                     </span>
                 </p>

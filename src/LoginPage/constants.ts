@@ -11,7 +11,7 @@ export const registrationInputFields = [
     },
     {
         label: 'Номер телефону',
-        type: 'text',
+        type: 'tel',
         name: 'phone',
     },
     {
@@ -29,7 +29,7 @@ export const registrationInputFields = [
 export const loginInputFields = [
     {
         label: 'Номер телефону',
-        type: 'text',
+        type: 'tel',
         name: 'phone',
     },
     {
