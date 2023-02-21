@@ -125,16 +125,16 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                     ))}
                 </div>
                 <p className={styles.pledge}>+ застава {car.pledge}₴</p>
-                {user?.discount && (
+                {user?.discount ? (
                     <p className={styles.discount}>
                         Вам нарахована знижка у розмірі {user?.discount}%
                     </p>
-                )}
-                {user?.discount && (
+                ) : null}
+                {user?.discount ? (
                     <span className={styles.discountPrice}>
                         {car.price + checkedAmount}₴
                     </span>
-                )}
+                ) : null}
                 <p className={styles.price}>
                     Остаточна ціна
                     <span>

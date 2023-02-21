@@ -48,14 +48,11 @@ export const ProfilePage = () => {
         return null
     }
 
-    console.log(history)
-
     const handleLogout = () => {
         localStorage.removeItem('token')
         navigate('/')
     }
 
-    console.log(user)
     return (
         <div className={styles.container}>
             <h2>Особистий кабінет</h2>
