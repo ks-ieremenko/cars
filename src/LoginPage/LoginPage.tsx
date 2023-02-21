@@ -4,6 +4,7 @@ import styles from './LoginPage.module.css'
 import { loginInputFields, registrationInputFields } from './constants'
 
 import { URL } from '../globalConstants'
+import { useNavigate } from 'react-router-dom'
 
 export const LoginPage = () => {
     const [loginData, setLoginData] = useState({
@@ -19,6 +20,8 @@ export const LoginPage = () => {
         role: 'CUSTOMER',
     })
 
+    const navigate = useNavigate()
+
     const handleLoginDataChange = (e: any) => {
         setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
@@ -30,29 +33,46 @@ export const LoginPage = () => {
     }
 
     const handleLogin = () => {
-        fetch(`${URL}/loginUser`, {
+        fetch(`${URL}/signin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(loginData),
         })
+            .then((res) => res.json())
+            .then((res) => {
+                localStorage.setItem('token', res.accessToken)
+                navigate('/profile')
+            })
     }
 
     const handleRegister = () => {
-        fetch(`${URL}/registrationUser`, {
+        fetch(`${URL}/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(registrationData),
         })
-        /*.then(() => {
-            setLoginData({
-                phone: registrationData.phone,
-                password: registrationData.password,
+            .then((res) => res.json())
+            .then((res) => {
+                fetch(`${URL}/signin`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        phone: res.phone,
+                        password: registrationData.password,
+                    }),
+                })
+                    .then((res) => res.json())
+                    .then((res) => {
+                        localStorage.setItem('token', res.accessToken)
+                        navigate('/profile')
+                    })
             })
-        })*/
     }
 
     return (
@@ -80,7 +100,7 @@ export const LoginPage = () => {
                 <h2>Вхід</h2>
                 <form>
                     {loginInputFields.map((item) => (
-                        <div>
+                        <div key={item.name}>
                             <label>{item.label}</label>
                             <input
                                 key={item.name}

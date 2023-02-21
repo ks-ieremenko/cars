@@ -27,16 +27,6 @@ export const CarListPage = () => {
             .then((response) => {
                 setCars(response)
             })
-
-        fetch(`${URL}/user`, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then((res) => res.json())
-            .then((response) => {
-                setCars(response)
-            })
     }, [])
 
     return (

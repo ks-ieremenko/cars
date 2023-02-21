@@ -5,6 +5,11 @@
 
 .percent {
     font-weight: 700;
-    font-size: 32px;
     line-height: 39px;
+}
+
+@media screen and (max-width: 450px) {
+    .pieChart {
+        margin-top: 0;
+    }
 }

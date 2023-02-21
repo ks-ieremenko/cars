@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from 'react'
 import styles from './BookingModal.module.css'
 import { additionalFeatures } from './constants'
 import carStyles from '../Car/Car.module.css'
+import { URL } from '../../globalConstants'
 
 type BookingModalProps = {
     car: any
@@ -33,6 +34,30 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
         }
         return acc
     }, 0)
+
+    const handleClick = () => {
+        const formData = new FormData()
+        const result = {
+            start_date: new Date('12/12/2001'),
+            end_date: new Date('13/12/2001'),
+            preferences: [],
+            car: car.id,
+            end_price: car.price,
+        }
+
+        Object.entries(result).forEach(([key, value]) => {
+            formData.append(key, value as string)
+        })
+
+        fetch(`${URL}/booking`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: formData,
+        }).then((res) => console.log(res))
+    }
 
     return (
         <div className={styles.background} onClick={onClose}>
@@ -72,7 +97,11 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                 <p className={styles.price}>
                     Остаточна ціна <span>{car.price + checkedAmount}₴</span>
                 </p>
-                <button className={carStyles.button} type={'button'}>
+                <button
+                    onClick={handleClick}
+                    className={carStyles.button}
+                    type={'button'}
+                >
                     БРОНЮВАННЯ
                 </button>
             </div>
