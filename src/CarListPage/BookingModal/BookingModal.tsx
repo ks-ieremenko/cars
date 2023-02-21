@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 import styles from './BookingModal.module.css'
 import { additionalFeatures } from './constants'
 import carStyles from '../Car/Car.module.css'
@@ -14,6 +14,19 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
     const [error, setError] = useState('')
+    const [user, setUser] = useState<any>()
+
+    useEffect(() => {
+        fetch(`${URL}/user`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                setUser(res)
+            })
+    }, [])
 
     const handleDateChange = (e: any) => {
         setError('')
@@ -112,8 +125,27 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                     ))}
                 </div>
                 <p className={styles.pledge}>+ застава {car.pledge}₴</p>
+                {user?.discount && (
+                    <p className={styles.discount}>
+                        Вам нарахована знижка у розмірі {user?.discount}%
+                    </p>
+                )}
+                {user?.discount && (
+                    <span className={styles.discountPrice}>
+                        {car.price + checkedAmount}₴
+                    </span>
+                )}
                 <p className={styles.price}>
-                    Остаточна ціна <span>{car.price + checkedAmount}₴</span>
+                    Остаточна ціна
+                    <span>
+                        {!user?.discount
+                            ? car.price + checkedAmount
+                            : car.price +
+                              checkedAmount -
+                              ((car.price + checkedAmount) / 100) *
+                                  user?.discount}
+                        ₴
+                    </span>
                 </p>
                 <button
                     onClick={handleClick}

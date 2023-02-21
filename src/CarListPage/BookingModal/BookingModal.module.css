@@ -148,9 +148,27 @@
     font-size: 32px;
     line-height: 140%;
     margin-left: 30px;
+    position: relative;
 }
 
 .error {
     color: red;
     margin-top: 5px;
+}
+
+.discount {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    color: #709583;
+    margin-top: 15px;
+}
+
+.discountPrice {
+    color: #BDBDBD;
+    text-decoration: line-through;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+    margin-left: 197px;
 }
