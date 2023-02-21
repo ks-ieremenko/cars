@@ -86,6 +86,48 @@
 }
 
 .error {
-    color: red;
+    color: #ac0404;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .container > div {
+        flex-basis: 0;
+    }
+
+    .container h2 {
+        font-size: 30px;
+        margin-bottom: 0;
+        line-height: 150%;
+    }
+
+    .container label {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .container input {
+        width: 270px;
+    }
+
+    .register, .login {
+        padding: 21px 24px 35px 24px;
+    }
+
+    .registerButton, .loginButton {
+        padding: 8px 0 8px 0;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column;
+        max-width: 346px;
+    }
 }

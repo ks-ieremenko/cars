@@ -35,6 +35,7 @@ export const LoginPage = () => {
             [e.target.name]: e.target.value,
         }))
     }
+    const phoneRegex = /^\+\d{1,3}\d{9}$/
 
     const handleLogin = () => {
         if (
@@ -43,6 +44,8 @@ export const LoginPage = () => {
                 .includes(false)
         ) {
             setLoginError('Будь-ласка заповніть всі поля')
+        } else if (!phoneRegex.test(loginData.phone)) {
+            setLoginError('Номер телефону не відповідає формату')
         } else {
             fetch(`${URL}/signin`, {
                 method: 'POST',
@@ -70,6 +73,8 @@ export const LoginPage = () => {
                 .includes(false)
         ) {
             setRegistrationError('Будь-ласка заповніть всі поля')
+        } else if (!phoneRegex.test(registrationData.phone)) {
+            setRegistrationError('Номер телефону не відповідає формату')
         } else {
             fetch(`${URL}/signup`, {
                 method: 'POST',

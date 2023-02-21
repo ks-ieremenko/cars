@@ -172,3 +172,102 @@
     line-height: 140%;
     margin-left: 197px;
 }
+
+@media screen and (max-width: 800px) {
+    .modal {
+        width: 630px;
+    }
+
+    .modal h2 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .carName {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 14px;
+    }
+
+    .datePickers label {
+        font-size: 17px;
+        line-height: 18px;
+        row-gap: 9px;
+    }
+
+    .datePickers input {
+        padding: 8px 13px 8px 17px;
+        width: 268px;
+    }
+
+    .featureContainer p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .modal {
+        width: 350px;
+    }
+
+    .modal h2 {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .carName {
+        font-size: 18px;
+        line-height: 19px;
+    }
+
+    .datePickers {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .featureContainer {
+        row-gap: 7px;
+        margin-bottom: 14px;
+    }
+
+    .pledge {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 15px;
+        margin-bottom: 13px;
+    }
+
+    .price span {
+        font-size: 24px;
+        margin-left: 19px;
+    }
+
+    .datePickers input::-webkit-datetime-edit-fields-wrapper {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .datePickers label {
+        font-size: 15px;
+        line-height: 13px;
+        row-gap: 10px;
+    }
+
+    .datePickers input {
+        padding: 5px 13px 5px 17px;
+        width: 245px;
+    }
+
+    .featureContainer p {
+        font-size: 16px;
+    }
+
+    .input {
+        width: 16px;
+        height: 16px;
+    }
+}

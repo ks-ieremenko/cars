@@ -83,6 +83,8 @@
 
 .carContainer > div > div > p:first-child {
     flex-basis: 60%;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 
@@ -91,11 +93,6 @@
 }
 
 
-.carContainer > div > div > p:first-child {
-    font-weight: 600;
-    font-size: 20px;
-}
-
 .noCars {
     max-width: 487px;
     margin: 0 auto;
@@ -103,4 +100,87 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
+}
+
+@media screen and (max-width: 800px) {
+    .container > div {
+        flex-direction: column;
+    }
+
+
+    .container h2 {
+        margin: 18px 0 19px 0;
+        font-size: 33px;
+    }
+
+    .container h3 {
+        font-size: 25px;
+        margin-bottom: 24px;
+    }
+
+    .info {
+        gap: 46px;
+        margin-bottom: 8px;
+    }
+
+    .info.info p {
+        font-size: 16px;
+        line-height: 13px;
+    }
+
+    .discount p:last-child {
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .button {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 0 50px;
+    }
+
+    .container h2 {
+        font-size: 23px;
+    }
+
+    .container h3 {
+        font-size: 20px;
+    }
+
+    .info.info p {
+        font-size: 13px;
+    }
+
+    .carContainer {
+        width: 320px;
+    }
+
+    .carContainer > div > div > p {
+        margin-bottom: 5px;
+    }
+
+
+    .carContainer > div > div > p:first-child {
+        font-size: 15px;
+    }
+
+
+    .carContainer > div > div > p:last-child {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .carContainer {
+        width: 300px;
+    }
+
+    .noCars {
+        font-size: 14px;
+    }
 }
