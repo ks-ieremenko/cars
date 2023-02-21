@@ -156,13 +156,16 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                 ) : null}
                 <p className={styles.price}>
                     Остаточна ціна
-                    <span>
-                        {!allDiscount
-                            ? finalPrice
-                            : finalPrice - (finalPrice / 100) * allDiscount}
-                        ₴
-                    </span>
+                    {days >= 1 ? (
+                        <span>
+                            {!allDiscount
+                                ? finalPrice
+                                : finalPrice - (finalPrice / 100) * allDiscount}
+                            ₴
+                        </span>
+                    ) : null}
                 </p>
+                )
                 <button
                     onClick={handleClick}
                     className={carStyles.button}
