@@ -35,7 +35,14 @@ export const Navbar = () => {
 
                 <div className={styles.personal}>
                     <User />
-                    <NavLink to={'/profile'}>Особистий кабінет</NavLink>
+                    <NavLink
+                        className={({ isActive }) =>
+                            isActive ? styles.active : styles.link
+                        }
+                        to={'/profile'}
+                    >
+                        Особистий кабінет
+                    </NavLink>
                 </div>
             </div>
 

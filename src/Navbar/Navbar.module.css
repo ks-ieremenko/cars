@@ -46,6 +46,10 @@
     color: #709583;
 }
 
+.link {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 850px) {
     .blackNav {
         font-size: 7px;
