@@ -47,10 +47,12 @@ export const Navbar = () => {
             </div>
 
             <div className={styles.container}>
-                <Logo className={styles.logo} />
-                <Link to={'/'} title={'Головна'} />
-                <Link to={'/list'} title={'Каталог'} />
-                <Link to={'/info'} title={'Умови оренди'} />
+                <Link to={'/'}>
+                    <Logo className={styles.logo} />
+                </Link>
+                <Link to={'/'}>ГОЛОВНА</Link>
+                <Link to={'/list'}>КАТАЛОГ</Link>
+                <Link to={'/info'}>УМОВИ ОРЕНДИ</Link>
             </div>
         </div>
     )

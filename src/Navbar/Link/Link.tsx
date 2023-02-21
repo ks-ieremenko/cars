@@ -4,11 +4,11 @@ import styles from './Link.module.css'
 
 type LinkProps = {
     to: string
-    title: string
+    children?: React.ReactNode
 }
 
 export const Link = (props: LinkProps) => {
-    const { to, title } = props
+    const { to, children } = props
 
     const activeStyle = {
         textDecoration: 'underline',
@@ -21,7 +21,7 @@ export const Link = (props: LinkProps) => {
             to={to}
             className={styles.link}
         >
-            {title.toUpperCase()}
+            {children}
         </NavLink>
     )
 }
