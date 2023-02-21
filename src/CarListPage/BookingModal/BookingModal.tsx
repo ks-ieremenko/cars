@@ -11,6 +11,19 @@ type BookingModalProps = {
 
 export const BookingModal = ({ onClose, car }: BookingModalProps) => {
     const [selectedFeatures, setSelectedFeatures] = useState(additionalFeatures)
+    const [startDate, setStartDate] = useState()
+    const [endDate, setEndDate] = useState()
+    const [error, setError] = useState('')
+
+    const handleDateChange = (e: any) => {
+        setError('')
+        if (e.target.name === 'start') {
+            setStartDate(e.target.value)
+        } else if (e.target.name === 'end') {
+            setEndDate(e.target.value)
+        }
+    }
+
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.name)
         setSelectedFeatures((prev) =>
@@ -36,27 +49,24 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
     }, 0)
 
     const handleClick = () => {
-        const formData = new FormData()
-        const result = {
-            start_date: new Date('12/12/2001'),
-            end_date: new Date('13/12/2001'),
-            preferences: [],
-            car: car.id,
-            end_price: car.price,
+        if (!startDate || !endDate) {
+            setError('Будь-ласка вкажіть дату початку і кінця')
+        } else {
+            fetch(`${URL}/booking`, {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    start_rent: startDate,
+                    end_rent: endDate,
+                    preferences: [],
+                    car,
+                    end_price: car.price + checkedAmount,
+                }),
+            }).then(() => onClose())
         }
-
-        Object.entries(result).forEach(([key, value]) => {
-            formData.append(key, value as string)
-        })
-
-        fetch(`${URL}/booking`, {
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-                'Content-Type': 'application/json',
-            },
-            body: formData,
-        }).then((res) => console.log(res))
     }
 
     return (
@@ -69,11 +79,19 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                 <div className={styles.datePickers}>
                     <label>
                         Початок оренди
-                        <input type={'date'} />
+                        <input
+                            onChange={handleDateChange}
+                            name={'start'}
+                            type={'date'}
+                        />
                     </label>
                     <label>
                         Кінець оренди
-                        <input type={'date'} />
+                        <input
+                            onChange={handleDateChange}
+                            name={'end'}
+                            type={'date'}
+                        />
                     </label>
                 </div>
                 <div className={styles.featureContainer}>
@@ -104,6 +122,7 @@ export const BookingModal = ({ onClose, car }: BookingModalProps) => {
                 >
                     БРОНЮВАННЯ
                 </button>
+                {error && <p className={styles.error}>{error}</p>}
             </div>
         </div>
     )

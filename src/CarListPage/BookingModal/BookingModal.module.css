@@ -149,3 +149,8 @@
     line-height: 140%;
     margin-left: 30px;
 }
+
+.error {
+    color: red;
+    margin-top: 5px;
+}

@@ -91,7 +91,11 @@ export const LoginPage = () => {
                             />
                         </div>
                     ))}
-                    <button type={'button'} onClick={handleRegister}>
+                    <button
+                        className={styles.registerButton}
+                        type={'button'}
+                        onClick={handleRegister}
+                    >
                         Зареєструватися
                     </button>
                 </form>
@@ -110,7 +114,11 @@ export const LoginPage = () => {
                             />
                         </div>
                     ))}
-                    <button type={'button'} onClick={handleLogin}>
+                    <button
+                        className={styles.loginButton}
+                        type={'button'}
+                        onClick={handleLogin}
+                    >
                         Увійти
                     </button>
                 </form>

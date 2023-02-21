@@ -5,7 +5,16 @@
 }
 
 .container {
-    padding: 0 50px;
+    padding: 0 170px;
+}
+
+.container > div {
+    display: flex;
+
+}
+
+.container > div > div {
+    flex-basis: 50%;
 }
 
 .info {
@@ -45,4 +54,53 @@
 
 .button {
     margin-top: 20px;
+}
+
+.history img {
+    width: inherit;
+    margin-bottom: 20px;
+}
+
+.history {
+    text-align: center;
+}
+
+.carContainer {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 450px;
+}
+
+.carContainer > div > div {
+    display: flex;
+}
+
+.carContainer > div > div > p {
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 24px;
+}
+
+.carContainer > div > div > p:first-child {
+    flex-basis: 60%;
+}
+
+
+.carContainer > div > div > p:last-child {
+    flex-basis: 40%;
+}
+
+
+.carContainer > div > div > p:first-child {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.noCars {
+    max-width: 487px;
+    margin: 0 auto;
+    text-align: left;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 }
