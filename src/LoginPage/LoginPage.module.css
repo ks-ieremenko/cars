@@ -70,8 +70,14 @@
     letter-spacing: normal;
 }
 
-.loginButton:hover {
+.loginButton:hover, .registerButton:hover {
     background: rgba(112, 149, 131, 0.75);
+    color: white;
+}
+
+.registerButton:hover {
+    background: #9eb9ab;
+    color: white;
 }
 
 .registerButton {
