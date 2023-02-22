@@ -37,10 +37,6 @@
     }
 }
 
-@media screen and (max-width: 850px) {
-}
-
-
 @media screen and (max-width: 450px) {
     .pieChartContainer {
         column-gap: 10px;

@@ -24,6 +24,7 @@
 
     .container p {
         font-size: 8px;
+        margin: 8px auto;
     }
 
 }

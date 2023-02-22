@@ -13,12 +13,12 @@ export const PieChart = ({ statistic }: PieChartProps) => {
     if (window.innerWidth < 800) {
         size = 100
     }
-    if (window.innerWidth < 400) {
+    if (window.innerWidth < 500) {
         size = 70
     }
 
     const chartRadius = size / 2
-    const chartStrokeWidth = window.innerWidth ? 2 : 4
+    const chartStrokeWidth = window.innerWidth < 500 ? 2 : 4
     const chartCircumference = 2 * Math.PI * chartRadius
     const strokeDasharray = chartCircumference * percentage
     return (
