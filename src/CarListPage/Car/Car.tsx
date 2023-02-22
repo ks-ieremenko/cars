@@ -75,10 +75,7 @@ export const Car = (props: CarProps) => {
             </h2>
             <div className={styles.iconsContainer}>
                 <DescriptionIcon Icon={CarTypeIcon} name={type} />
-                <DescriptionIcon
-                    Icon={EngineIcon}
-                    name={`${engine_speed / 1000} л`}
-                />
+                <DescriptionIcon Icon={EngineIcon} name={`${engine_speed} л`} />
                 <DescriptionIcon Icon={TransmissionIcon} name={gearbox} />
                 <DescriptionIcon Icon={FuelIcon} name={fuel_type} />
                 <DescriptionIcon Icon={PersonIcon} name={`${seats} чол`} />
